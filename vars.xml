@@ -1,6 +1,15 @@
 <include>
-  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=PCMU,PCMA"/>
+  <X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/callie"/>
 
-  <X-PRE-PROCESS cmd="set" data="internal_sip_port=5060"/>
-  <X-PRE-PROCESS cmd="set" data="external_sip_port=5080"/>
+  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=OPUS,PCMU,PCMA"/>
+
+  <X-PRE-PROCESS cmd="set" data="external_sip_port=5060"/>
+  <X-PRE-PROCESS cmd="set" data="external_rtp_ip=auto-nat"/>
+  <X-PRE-PROCESS cmd="set" data="external_sip_ip=auto-nat"/>
+
+  <!-- event socket password -->
+  <X-PRE-PROCESS cmd="set" data="event_socket_socket_password=ClueCon"/>
+
+  <!-- https://freeswitch.org/confluence/display/FREESWITCH/Configuring+FreeSWITCH#ConfiguringFreeSWITCH-vars.xml -->
+  <X-PRE-PROCESS cmd="include" data="passwords.xml"/>
 </include>

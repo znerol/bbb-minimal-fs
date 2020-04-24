@@ -1,6 +1,6 @@
-<profile name="external">
+<profile name="external-ipv6">
   <gateways>
-    <X-PRE-PROCESS cmd="include" data="external/*.xml"/>
+    <X-PRE-PROCESS cmd="include" data="external-ipv6/*.xml"/>
   </gateways>
 
   <settings>
@@ -13,11 +13,8 @@
     <param name="codec-prefs" value="$${global_codec_prefs}"/>
     <param name="inbound-late-negotiation" value="true"/>
 
-    <param name="local-network-acl" value="localnet.auto"/>
-    <param name="rtp-ip" value="$${local_ip_v4}"/>
-    <param name="sip-ip" value="$${local_ip_v4}"/>
-    <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
-    <param name="ext-sip-ip" value="$${external_sip_ip}"/>
+    <param name="rtp-ip" value="$${local_ip_v6}"/>
+    <param name="sip-ip" value="$${local_ip_v6}"/>
     <param name="sip-port" value="$${external_sip_port}"/>
 
     <!-- WebSockets for WebRTC signalling -->
