@@ -1,32 +1,39 @@
-## Minimal FreeSWITCH Configuration
+Minimal FreeSWITCH config for BigBlueButton
+===========================================
 
-The default "vanilla" configuration that comes with FreeSWITCH has
-been designed as a showcase of the configurability of the myriad of
-features that FreeSWITCH comes with out of the box. While it is very
-helpful in tinkering with FreeSWITCH, it has a lot of extraneous stuff
-enabled/configured for use in a production system. This configuration
-aims to take the reverse stance -- it attempts to be a starting point
-for configuring a new system by "adding" required features (instead of
-removing them as one would do if one starts with the default
-configuration).
+*Objective:*
 
-This folder also includes the corresponding `modules.conf` that lists
-the modules that are required to get this configuration working.
+Provide a working config for FreeSWITCH enough to run BigBlueButton WebRTC. Old
+red5/flash client is not supported.
 
-### Test
+*Method:*
 
-This configuration was tested by sending an INVITE (without
-registration) using the `siprtp` example program that comes with
-PJSIP, and verifying that the info dump is produced on the FreeSWITCH
-console.
+* Start with [minimal upstream][1] config
+* Remove superflous modules
+* Cherry-Pick useful stuff from BBB FreeSWITCH config
 
-    $ ./siprtp -q -p 1234 "sip:stub@$(my_ip):5080"
+When running ustream FreeSWITCH on debian buster, the following packages are needed:
 
-### Upstream
+```
+apt-get install \
+    freeswitch-meta-default \
+    freeswitch-mod-event-socket \
+    freeswitch-mod-opus \
+    freeswitch-sounds-en-us-callie \
+    freeswitch-timezones
+```
 
-The configuration in this folder comes from
-[mx4492/freeswitch-minimal-conf](https://github.com/mx4492/freeswitch-minimal-conf/commit/270941d6f2dca279f1bb8762d072940273d5ae11).
+Note that recording is **only** supported when using the custom built
+FreeSWITCH shipping with bbb. In this case it is necessary to also load
+`mod_opusfile`.
 
-### Other Minimal Configurations
+*Stability:*
 
-* [voxserv/freeswitch_conf_minimal](https://github.com/voxserv/freeswitch_conf_minimal)
+This is a small research project. Please do not file support requests.
+
+*License:*
+
+The config has been copied from various sources. FreeSWITCH is Licensed under
+MPL 1.1 and BigBlueButton under LGPL.
+
+[1]: https://github.com/signalwire/freeswitch/tree/master/conf/minimal
