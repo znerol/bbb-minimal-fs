@@ -16,7 +16,6 @@
       <control action="vol listen up" digits="6"/>
       <control action="vol listen zero" digits="5"/>
       <control action="vol listen dn" digits="4"/>
-      <control action="hangup" digits="#"/>
     </group>
   </caller-controls>
 
@@ -26,7 +25,7 @@
       <param name="domain" value="$${domain}"/>
       <param name="rate" value="48000"/>
       <param name="interval" value="20"/>
-      <param name="energy-level" value="200"/>
+      <param name="energy-level" value="$${conference_energy_level}"/>
       <!-- <param name="sound-prefix" value="$${sounds_dir}/en/us/callie"/> -->
       <param name="muted-sound" value="conference/conf-muted.wav"/>
       <param name="unmuted-sound" value="conference/conf-unmuted.wav"/>
