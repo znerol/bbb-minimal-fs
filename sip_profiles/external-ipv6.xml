@@ -17,6 +17,10 @@
     <param name="sip-ip" value="$${local_ip_v6}"/>
     <param name="sip-port" value="$${external_sip_port}"/>
 
+    <!-- Drop stale RTP streams -->
+    <param name="rtp-timeout-sec" value="300"/>
+    <param name="rtp-hold-timeout-sec" value="1800"/>
+
     <!-- WebSockets for WebRTC signalling -->
     <param name="ws-binding"  value=":5066"/>
     <param name="wss-binding"  value=":7443"/>
