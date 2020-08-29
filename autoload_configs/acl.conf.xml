@@ -14,6 +14,29 @@
       <node type="allow" cidr="::1/128"/>
     </list>
 
+    <!--
+        Fix problems with mobile phones connecting via cgnat.
+        https://groups.google.com/forum/#!msg/bigbluebutton-dev/-p6T8ZFPUbc/DoL2rswzAQAJ
+
+        IP candidates offered by a peer during ICE negotiation are checked
+        against this list of networks.
+    -->
+
+    <list name="ice" default="allow">
+      <!-- NAT -->
+      <node type="deny" cidr="10.0.0.0/8"/> <!-- RFC 1918 Private-Use network -->
+      <node type="deny" cidr="172.16.0.0/12"/> <!-- RFC 1918 Private-Use network -->
+      <node type="deny" cidr="192.168.0.0/16"/> <!-- RFC 1918 Private-Use network -->
+      <node type="deny" cidr="fc00::/7"/> <!-- RFC 4193 Unique Local Unicast -->
+
+      <!-- Link-Local -->
+      <node type="deny" cidr="169.254.0.0/16"/> <!-- RFC 3927 Link-Local -->
+      <node type="deny" cidr="fe80::/10"/> <!-- RFC 4291 Link-Local -->
+
+      <!-- Carrier-grade NAT -->
+      <node type="deny" cidr="100.64.0.0/10"/> <!-- RFC 6598 Shared Address Space -->
+    </list>
+
     <list name="domains" default="deny">
     </list>
   </network-lists>

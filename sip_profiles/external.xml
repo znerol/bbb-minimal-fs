@@ -14,6 +14,7 @@
     <param name="inbound-late-negotiation" value="true"/>
 
     <param name="local-network-acl" value="localnet.auto"/>
+    <param name="apply-candidate-acl" value="ice"/>
     <param name="rtp-ip" value="$${local_ip_v4}"/>
     <param name="sip-ip" value="$${local_ip_v4}"/>
     <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>

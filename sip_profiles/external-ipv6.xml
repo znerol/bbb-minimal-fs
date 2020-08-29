@@ -13,6 +13,7 @@
     <param name="codec-prefs" value="$${global_codec_prefs}"/>
     <param name="inbound-late-negotiation" value="true"/>
 
+    <param name="apply-candidate-acl" value="ice"/>
     <param name="rtp-ip" value="$${local_ip_v6}"/>
     <param name="sip-ip" value="$${local_ip_v6}"/>
     <param name="sip-port" value="$${external_sip_port}"/>
