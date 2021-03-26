@@ -1,0 +1,36 @@
+<profile name="browser-ipv6">
+  <settings>
+    <param name="auth-calls" value="false"/>
+
+    <param name="dialplan" value="XML"/>
+    <param name="context" value="browser"/>
+
+    <param name="codec-prefs" value="$${global_codec_prefs}"/>
+    <param name="inbound-late-negotiation" value="true"/>
+
+    <param name="local-network-acl" value="none"/>
+    <param name="apply-candidate-acl" value="ice"/>
+    <param name="sip-ip" value="$${browser_sip_ip_v6}"/>
+    <param name="rtp-ip" value="$${browser_rtp_ip_v6}"/>
+    <param name="sip-port" value="$${browser_sip_port}"/>
+
+    <!-- WebSockets for WebRTC signalling -->
+    <param name="ws-binding"  value="$${browser_ws_binding_v6}"/>
+    <param name="wss-binding"  value="$${browser_wss_binding_v6}"/>
+
+    <!-- Drop stale RTP streams -->
+    <param name="rtp-timeout-sec" value="300"/>
+    <param name="rtp-hold-timeout-sec" value="1800"/>
+
+    <!-- enable rtcp on every channel also can be done per leg basis with rtcp_audio_interval_msec variable set to passthru to pass it across a call -->
+    <param name="rtcp-audio-interval-msec" value="5000"/>
+    <param name="rtcp-video-interval-msec" value="5000"/>
+
+    <!-- DTMF for dialin pin-entry -->
+    <param name="rfc2833-pt" value="101"/>
+    <param name="dtmf-type" value="rfc2833"/>
+
+    <!-- Necessary for transfer from echo-test to conference -->
+    <param name="liberal-dtmf" value="true"/>
+  </settings>
+</profile>
