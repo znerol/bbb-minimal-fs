@@ -3,8 +3,7 @@
 
     <extension name="bbb_webrtc_sfu_call" continue="true">
       <condition field="${sip_via_protocol}" expression="^wss?$" break="on-false">
-        <action application="set" data="bbb_authorized=true"/>
-        <action application="transfer" data="${destination_number} XML default"/>
+        <action application="transfer" data="${destination_number} XML conference"/>
       </condition>
     </extension>
 
