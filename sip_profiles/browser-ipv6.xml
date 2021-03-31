@@ -26,10 +26,6 @@
     <param name="rtcp-audio-interval-msec" value="5000"/>
     <param name="rtcp-video-interval-msec" value="5000"/>
 
-    <!-- DTMF for dialin pin-entry -->
-    <param name="rfc2833-pt" value="101"/>
-    <param name="dtmf-type" value="rfc2833"/>
-
     <!-- Necessary for transfer from echo-test to conference -->
     <param name="liberal-dtmf" value="true"/>
   </settings>
