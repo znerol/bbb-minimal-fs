@@ -1,22 +1,20 @@
-<profile name="external">
+<profile name="dialin-ipv6">
   <gateways>
-    <X-PRE-PROCESS cmd="include" data="external-ipv4/*.xml"/>
+    <X-PRE-PROCESS cmd="include" data="dialin-ipv6/*.xml"/>
   </gateways>
 
   <settings>
     <param name="auth-calls" value="false"/>
 
     <param name="dialplan" value="XML"/>
-    <param name="context" value="public"/>
+    <param name="context" value="dialin"/>
 
     <param name="codec-prefs" value="$${global_codec_prefs}"/>
     <param name="inbound-late-negotiation" value="true"/>
 
-    <param name="rtp-ip" value="$${local_ip_v4}"/>
-    <param name="sip-ip" value="$${local_ip_v4}"/>
-    <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
-    <param name="ext-sip-ip" value="$${external_sip_ip}"/>
-    <param name="sip-port" value="$${external_sip_port}"/>
+    <param name="sip-ip" value="$${dialin_sip_ip_v6}"/>
+    <param name="rtp-ip" value="$${dialin_rtp_ip_v6}"/>
+    <param name="sip-port" value="$${dialin_sip_port}"/>
 
     <!-- Drop stale RTP streams -->
     <param name="rtp-timeout-sec" value="300"/>

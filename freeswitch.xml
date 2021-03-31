@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <document type="freeswitch/xml">
+  <X-PRE-PROCESS cmd="include" data="vars-default.xml"/>
   <X-PRE-PROCESS cmd="include" data="vars.xml"/>
+  <X-PRE-PROCESS cmd="include" data="passwords.xml"/>
 
   <section name="configuration" description="Various Configuration">
     <X-PRE-PROCESS cmd="include" data="autoload_configs/*.xml"/>

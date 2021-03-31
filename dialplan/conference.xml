@@ -1,22 +1,6 @@
 <include>
   <context name="conference">
 
-    <extension name="bbb_dialin">
-      <condition field="destination_number" expression="^dialin$">
-        <action application="answer"/>
-        <action application="sleep" data="500"/>
-        <action application="play_and_get_digits" data="5 5 3 7000 # conference/conf-pin.wav ivr/ivr-that_was_an_invalid_entry.wav pin \d+"/>
-        <action application="transfer" data="dialin_pin_test"/>
-      </condition>
-    </extension>
-
-    <extension name="bbb_dialin_pin_test">
-      <condition field="destination_number" expression="^dialin_pin_test$"/>
-      <condition field="${conference ${pin} list}" expression="/sofia/g">
-        <action application="transfer" data="${pin}"/>
-      </condition>
-    </extension>
-
     <extension name="bbb_echo_test">
       <condition field="destination_number" expression="^echo(\d{5,11})$">
         <action application="set" data="vbridge=$1"/>
