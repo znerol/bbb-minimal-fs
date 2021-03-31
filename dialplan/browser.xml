@@ -4,7 +4,7 @@
     <extension name="bbb_webrtc_browser_call">
       <condition field="${sip_via_protocol}" expression="^wss?$">
         <action application="set" data="jb_use_timestamps=true"/>
-        <action application="jitterbuffer" data="$${browser_jitterbuffer}"/>
+        <action application="set" data="jitterbuffer_msec=$${browser_jitterbuffer_msec}"/>
         <action application="transfer" data="${destination_number} XML conference"/>
       </condition>
     </extension>
