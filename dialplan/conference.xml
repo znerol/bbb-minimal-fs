@@ -15,7 +15,6 @@
 
     <extension name="bbb_conferences">
       <condition field="destination_number" expression="^(\d{5,11})$">
-        <action application="jitterbuffer" data="$${conference_jitterbuffer}"/>
         <action application="answer"/>
         <action application="conference" data="$1@cdquality"/>
       </condition>

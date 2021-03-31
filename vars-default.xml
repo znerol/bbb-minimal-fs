@@ -7,7 +7,6 @@
 
   <!-- Conference quality params -->
   <X-PRE-PROCESS cmd="set" data="conference_energy_level=100"/>
-  <X-PRE-PROCESS cmd="set" data="conference_jitterbuffer=60:120"/>
 
   <!-- Shared external IPv4 sip/rtp addresses -->
   <X-PRE-PROCESS cmd="set" data="external_rtp_ip=auto-nat"/>
@@ -15,6 +14,9 @@
 
   <!-- Connection params for browsers via websocket (ipv4/ipv6) -->
   <X-PRE-PROCESS cmd="set" data="browser_sip_port=auto"/>
+
+  <!-- Size (msec) of jitter buffer for connections from browsers -->
+  <X-PRE-PROCESS cmd="set" data="browser_jitterbuffer=60:120"/>
 
   <!-- Connection params for browsers via websocket (ipv4) -->
   <X-PRE-PROCESS cmd="set" data="browser_local_sip_ip_v4=$${local_ip_v4}"/>
