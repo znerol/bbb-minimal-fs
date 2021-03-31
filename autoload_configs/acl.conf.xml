@@ -12,6 +12,10 @@
     <list name="esl" default="deny">
       <node type="allow" cidr="127.0.0.1/8"/>
       <node type="allow" cidr="::1/128"/>
+
+      <include>
+        <X-PRE-PROCESS cmd="include" data="acl-esl/*.xml"/>
+      </include>
     </list>
 
     <!--
@@ -35,6 +39,10 @@
 
       <!-- Carrier-grade NAT -->
       <node type="deny" cidr="100.64.0.0/10"/> <!-- RFC 6598 Shared Address Space -->
+
+      <include>
+        <X-PRE-PROCESS cmd="include" data="acl-ice/*.xml"/>
+      </include>
     </list>
 
   </network-lists>
