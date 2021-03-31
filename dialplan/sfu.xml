@@ -1,8 +1,8 @@
 <include>
   <context name="sfu">
 
-    <extension name="bbb_webrtc_sfu_call" continue="true">
-      <condition field="${sip_via_protocol}" expression="^wss?$" break="on-false">
+    <extension name="bbb_webrtc_sfu_call">
+      <condition field="${sip_via_protocol}" expression="^wss?$">
         <action application="transfer" data="${destination_number} XML conference"/>
       </condition>
     </extension>
