@@ -9,7 +9,7 @@
   <X-PRE-PROCESS cmd="set" data="conference_energy_level=100"/>
 
   <!-- Set external ip to local one by default -->
-  <X-PRE-PROCESS cmd="set" data="external_sip_ip=$${local_ip_v4}"/>
+  <X-PRE-PROCESS cmd="set" data="external_ip_v4=$${local_ip_v4}"/>
 
   <!-- Size (msec) of jitter buffer for connections from browsers -->
   <X-PRE-PROCESS cmd="set" data="browser_jitterbuffer_msec=60:120"/>
