@@ -5,6 +5,7 @@
       <condition field="${sip_via_protocol}" expression="^wss?$">
         <action application="set" data="jb_use_timestamps=true"/>
         <action application="set" data="jitterbuffer_msec=$${browser_jitterbuffer_msec}"/>
+        <action application="set" data="include_external_ip=true"/>
         <action application="transfer" data="${destination_number} XML conference"/>
       </condition>
     </extension>

@@ -8,12 +8,11 @@
     <param name="codec-prefs" value="$${global_codec_prefs}"/>
     <param name="inbound-late-negotiation" value="true"/>
 
-    <param name="local-network-acl" value="none"/>
     <param name="apply-candidate-acl" value="ice"/>
-    <param name="sip-ip" value="$${browser_local_sip_ip_v4}"/>
-    <param name="rtp-ip" value="$${browser_local_rtp_ip_v4}"/>
-    <param name="ext-sip-ip" value="$${browser_external_sip_ip}"/>
-    <param name="ext-rtp-ip" value="$${browser_external_rtp_ip}"/>
+    <param name="sip-ip" value="$${local_ip_v4}"/>
+    <param name="rtp-ip" value="$${local_ip_v4}"/>
+    <param name="ext-sip-ip" value="$${external_ip_v4}"/>
+    <param name="ext-rtp-ip" value="$${external_ip_v4}"/>
     <param name="sip-port" value="$${browser_sip_port}"/>
 
     <!-- WebSockets for WebRTC signalling -->

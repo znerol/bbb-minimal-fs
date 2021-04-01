@@ -1,4 +1,4 @@
-<profile name="dialin">
+<profile name="dialin-ipv4">
   <gateways>
     <X-PRE-PROCESS cmd="include" data="dialin-ipv4/*.xml"/>
   </gateways>
@@ -12,10 +12,10 @@
     <param name="codec-prefs" value="$${global_codec_prefs}"/>
     <param name="inbound-late-negotiation" value="true"/>
 
-    <param name="sip-ip" value="$${dialin_local_sip_ip_v4}"/>
-    <param name="rtp-ip" value="$${dialin_local_rtp_ip_v4}"/>
-    <param name="ext-sip-ip" value="$${dialin_external_sip_ip}"/>
-    <param name="ext-rtp-ip" value="$${dialin_external_rtp_ip}"/>
+    <param name="sip-ip" value="$${local_ip_v4}"/>
+    <param name="rtp-ip" value="$${local_ip_v4}"/>
+    <param name="ext-sip-ip" value="$${external_ip_v4}"/>
+    <param name="ext-rtp-ip" value="$${external_ip_v4}"/>
     <param name="sip-port" value="$${dialin_sip_port}"/>
 
     <!-- Drop stale RTP streams -->
