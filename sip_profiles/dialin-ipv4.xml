@@ -18,10 +18,6 @@
     <param name="ext-rtp-ip" value="$${external_ip_v4}"/>
     <param name="sip-port" value="$${dialin_sip_port}"/>
 
-    <!-- Drop stale RTP streams -->
-    <param name="rtp-timeout-sec" value="300"/>
-    <param name="rtp-hold-timeout-sec" value="1800"/>
-
     <!-- DTMF for dialin pin-entry -->
     <param name="rfc2833-pt" value="101"/>
     <param name="dtmf-type" value="rfc2833"/>
