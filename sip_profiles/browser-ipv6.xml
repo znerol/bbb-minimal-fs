@@ -23,5 +23,8 @@
 
     <!-- Necessary for transfer from echo-test to conference -->
     <param name="liberal-dtmf" value="true"/>
+
+    <!-- Profile database (full in-memory) -->
+    <param name="dbname" value="sqlite://memory://file:browser-ipv6?mode=memory&amp;cache=shared"/>
   </settings>
 </profile>

@@ -21,5 +21,8 @@
     <!-- DTMF for dialin pin-entry -->
     <param name="rfc2833-pt" value="101"/>
     <param name="dtmf-type" value="rfc2833"/>
+
+    <!-- Profile database (full in-memory) -->
+    <param name="dbname" value="sqlite://memory://file:dialin-ipv4?mode=memory&amp;cache=shared"/>
   </settings>
 </profile>

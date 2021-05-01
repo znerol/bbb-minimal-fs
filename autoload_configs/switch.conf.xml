@@ -4,7 +4,8 @@
 
     <!-- Max number of sessions to allow at any given time -->
     <param name="max-sessions" value="1000"/>
-    <!--Most channels to create per second -->
+
+    <!-- Most channels to create per second -->
     <param name="sessions-per-second" value="30"/>
 
     <!-- Default Global Log Level - value is one of debug,info,notice,warning,err,crit,alert -->
@@ -13,5 +14,8 @@
     <!-- RTP port range -->
     <param name="rtp-start-port" value="16384"/>
     <param name="rtp-end-port" value="24576"/>
+
+    <!-- Core database (full in-memory) -->
+    <param name="core-db-dsn" value="sqlite://memory://file:core?mode=memory&amp;cache=shared"/>
   </settings>
 </configuration>
